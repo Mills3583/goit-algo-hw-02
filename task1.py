@@ -28,13 +28,13 @@ if __name__ == "__main__":
 
         user_input = input("Натисніть Enter для створення заявки, або 'q' для виходу: ").lower()
 
-        if(not user_input):
+        if user_input == '':
           generate_request() #Виконати generate_request() для створення нових заявок
           process_request() #Виконати process_request() для обробки заявок
 
-        elif(user_input != 'q' and user_input != ''): # Якщо юзер ввів щось поміж Enter або 'q'
-          print(f"Ви ввели: {user_input}, будь ласка введіть 'q' для виходу або натисність Enter для створення заявки:")
+        elif(user_input == 'q'): # Якщо юзер ввів щось поміж Enter або 'q'
+          print("Вихід з програми.")
+          break
 
-        if(user_input == 'q'): # Поки користувач не вийде з програми:
-            print("Вихід з програми.")
-            break
+        else: # Поки користувач не вийде з програми:
+          print(f"Ви ввели: {user_input}, будь ласка введіть 'q' для виходу або натисність Enter для створення заявки:")
